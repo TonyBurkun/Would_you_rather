@@ -16,8 +16,6 @@ class Login extends Component {
         const selectElem = event.target;
         const selectedOptionId = selectElem.options[selectElem.selectedIndex].getAttribute('id');
 
-        console.log(selectedOptionId);
-
         this.setState(() => ({
             loggedUserId: selectedOptionId ? selectedOptionId : false
         }));
@@ -25,19 +23,12 @@ class Login extends Component {
 
     handleSignIn(event) {
         event.preventDefault();
-
         const { loggedUserId } = this.state;
-
         this.props.dispatch(setAuthedUser(loggedUserId));
-
-
-
     }
 
 
     render () {
-
-        console.log('Login: ', this.props);
 
         let { usersId, authedUser } = this.props;
 
@@ -48,7 +39,6 @@ class Login extends Component {
 
         return (
             <div>
-
                 <div className="login-form">
                     <div className="login-form__greeting">
                         <h2>Welcome to the Would You Rather App!</h2>
@@ -62,7 +52,7 @@ class Login extends Component {
                                <User key={id} id={id}/>
                            ))}
                        </select>
-                       <button onClick={event => this.handleSignIn(event)}>Sign In</button>
+                       <button className="submit-btn" onClick={event => this.handleSignIn(event)}>Sign In</button>
                    </div>
                 </div>
 
@@ -73,8 +63,6 @@ class Login extends Component {
 
 
 function mapStateToProps ({users, authedUser}) {
-
-
 
     return {
         users,

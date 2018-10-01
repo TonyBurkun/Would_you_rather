@@ -3,19 +3,13 @@ import { connect } from 'react-redux'
 
 class User extends Component {
 
-    handleUserSelect (event, id) {
-        event.preventDefault();
-
-        console.log(id);
-    }
-
     render () {
 
         const { user } = this.props;
         const {id} = this.props;
 
         return (
-            <option id={id} onClick={event => this.handleUserSelect(event, id)}>{user.name}</option>
+            <option id={id}>{user.name}</option>
         )
     }
 }

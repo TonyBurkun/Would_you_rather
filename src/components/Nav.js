@@ -12,8 +12,6 @@ class Nav extends Component {
 
     render() {
 
-        console.log('NAV: ',this.props);
-
         const { users, authedUser } = this.props;
         let userName = '';
 
@@ -63,8 +61,6 @@ class Nav extends Component {
 }
 
 function mapStateToProps ({users, authedUser}) {
-
-
 
     return {
         users,
