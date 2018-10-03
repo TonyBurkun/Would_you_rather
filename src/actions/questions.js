@@ -1,5 +1,6 @@
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS';
 export const SAVE_ACTION_ANSWER = 'SAVE QUESTION ANSWER';
+export const SAVE_QUESTION = 'SAVE_QUESTION';
 
 
 
@@ -18,5 +19,12 @@ export function saveQuestionAnswer({authedUser, qid, answer}) {
         qid,
         answer
 
+    }
+}
+
+export function saveQuestion(question) {
+    return {
+        type: SAVE_QUESTION,
+        question
     }
 }

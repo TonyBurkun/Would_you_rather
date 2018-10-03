@@ -13,6 +13,8 @@ class Question extends Component{
 
     render () {
 
+        console.log(this);
+
         const { question, users } = this.props;
 
         let user = users[question.author],

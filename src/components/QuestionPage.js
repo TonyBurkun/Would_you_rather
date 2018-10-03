@@ -64,9 +64,6 @@ class QuestionPage extends Component {
 
     render() {
 
-
-        console.log(this.props);
-        console.log(this.state.isAnswer);
         const {question, users} = this.props;
         const questionUser = users[question.author],
               userName = questionUser.name,
