@@ -8,7 +8,6 @@ class Question extends Component{
     handleViewPoll(event, qid){
 
         this.props.history.push(`/questions/${qid}`)
-
     }
 
 

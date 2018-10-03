@@ -342,3 +342,93 @@ header {
 .vote-block.active .vote-question {
     color: #008800;
 }
+
+
+/*LEADER LIST page*/
+
+.leader-list-item{
+    position: relative;
+    width: 500px;
+    margin: 20px auto 0 auto;
+    border: 2px solid #dcdcdc;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.leader-list-item .image{
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.leader-list-item .image img {
+    width: 100%;
+}
+
+.leader-list-item .description{
+    margin-left: 25px;
+    flex-grow: 2;
+    align-self: flex-start;
+}
+
+.leader-list-item .description .user-name{
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.leader-list-item .statistic-item{
+    margin-top: 20px;
+ }
+
+.leader-list-item .statistic-item .title{
+    margin-right: 10px;
+}
+
+.leader-list-item .statistic-item .value{
+    font-weight: bold;
+}
+
+.leader-list-item .score-block{
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #dcdcdc;
+}
+
+.leader-list-item .score-block .score-title{
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #dcdcdc;
+    margin-bottom: 10px;
+}
+
+.leader-list-item .score-block .score-value{
+    font-size: 20px;
+    color: #fff;
+    background: #008800;
+    padding: 10px;
+    border-radius: 100%;
+}
+
+.leader-list-item .reward-item {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    font-size: 18px;
+}
+
+.leader-list-item .reward-item.first{
+    color: #ffd700;
+}
+
+
+.leader-list-item .reward-item.second{
+    color: #c0c0c0;
+}
+
+.leader-list-item .reward-item.third{
+    color: #cd7f32;
+}

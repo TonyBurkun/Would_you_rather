@@ -119,6 +119,9 @@ class QuestionPage extends Component {
 function mapStateToProps(store, props) {
     const qid = props.match.params.id;
 
+    console.log(store);
+    console.log(qid);
+
     console.log(store.questions[qid]);
     return {
         authedUser: store.authedUser,
