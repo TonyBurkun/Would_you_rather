@@ -5,6 +5,7 @@ import { saveQuestionAnswer } from '../actions/questions'
 import { saveUserAnswer } from '../actions/users'
 import { withRouter } from 'react-router-dom'
 import QuestionResult from './QuestionResult'
+import {showLoading, hideLoading} from "react-redux-loading";
 
 
 class QuestionPage extends Component {
@@ -48,16 +49,20 @@ class QuestionPage extends Component {
         const {authedUser, qid} = this.props;
         let answer = this.state.radioBtnValue;
 
-
+        this.props.dispatch(showLoading());
         this.props.dispatch(saveQuestionAnswer({authedUser, qid, answer}));
         this.props.dispatch(saveUserAnswer({authedUser, qid, answer}));
 
 
         _saveQuestionAnswer({authedUser, qid, answer})
             .then((res) => {
+
+                this.props.dispatch(hideLoading());
                 this.setState(()=> ({
                     isAnswer: true
                 }))
+
+
             })
 
     }

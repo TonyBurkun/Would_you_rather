@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { saveQuestion } from '../actions/questions'
 import { _saveQuestion } from '../utils/_DATA'
+import {showLoading, hideLoading} from "react-redux-loading";
+import { withRouter } from 'react-router-dom'
 
 class NewQuestion extends Component {
 
@@ -43,9 +45,17 @@ class NewQuestion extends Component {
 
 
         if (optionOne && optionTwo) {
-
+            this.props.dispatch(showLoading());
             _saveQuestion(question)
-                .then(question =>  this.props.dispatch(saveQuestion(question)));
+                .then(question =>  {
+                    this.props.dispatch(saveQuestion(question));
+                    this.setState(() => ({
+                        optionOne: '',
+                        optionTwo: ''
+                    }));
+                    this.props.dispatch(hideLoading());
+                    this.props.history.push(`/`);
+                });
         }
     };
 
@@ -80,4 +90,4 @@ function mapStateToProps(store){
     }
 }
 
-export default connect(mapStateToProps)(NewQuestion)
+export default withRouter(connect(mapStateToProps)(NewQuestion))

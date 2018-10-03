@@ -491,3 +491,10 @@ header {
     width: 100%;
     margin-top: 15px;
 }
+
+
+
+.loading-bar{
+    background: #008800;
+    height:3px;
+}

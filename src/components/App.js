@@ -1,6 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {BrowserRouter as Router, Route, Redirect, Switch} from 'react-router-dom'
 import {connect} from 'react-redux'
+import LoadingBar from 'react-redux-loading'
 
 import Home from './Home'
 import Login from './Login'
@@ -41,6 +42,7 @@ class App extends Component {
         return (
             <Router>
                 <Fragment>
+                    <LoadingBar className="loading-bar" />
                     <Nav/>
                     <div className="container">
                         <Switch>
