@@ -4,7 +4,7 @@ This project is based on the starter code for the final assessment project for U
 
 The `_DATA.js` file represents a fake database and methods that let you access the data.
 
-The [Create React App](https://github.com/facebook/create-react-app) was used to bootstrap the project.
+The [Create React App](https://github.com/facebook/create-react-app).
 
 ## Installing and starting the server
 
