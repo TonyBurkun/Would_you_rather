@@ -24,11 +24,11 @@ details about the question.
     * "Unanswered questions" page contains questions that the user not answered to. By clicking vote buttons user and submit
 answer and the question is then moved to answered.
 
-* "Add" page contains a crude form that can be used to submit new questions.
+* "New Question" page contains a crude form that can be used to submit new questions.
 
-* "Leaderboard" contains information about how many questions has each user answered to.
+* "Leader Board" contains information about how many questions has each user answered to.
 
-* "Question/:id page" contains details about each question.
+* "Questions/:id page" contains details about each question.
 
 * Navigation can be found from the top left of each page. The username and logout button appear after the user has been logged in.
 
