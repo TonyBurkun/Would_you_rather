@@ -32,7 +32,6 @@ class NewQuestion extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        console.log(this);
 
         const { optionOne, optionTwo } = this.state;
         const { authedUser } = this.props;

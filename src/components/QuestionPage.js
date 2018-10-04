@@ -15,11 +15,8 @@ class QuestionPage extends Component {
     };
 
     componentWillMount() {
-        console.log(this.props);
         const {qid, authedUser, users} = this.props;
         const currentUser = users[authedUser];
-
-        console.log(Boolean(currentUser.answers[qid]));
 
         if (currentUser.answers[qid]) {
             this.setState(()=> ({
@@ -121,10 +118,6 @@ class QuestionPage extends Component {
 function mapStateToProps(store, props) {
     const qid = props.match.params.id;
 
-    console.log(store);
-    console.log(qid);
-
-    console.log(store.questions[qid]);
     return {
         authedUser: store.authedUser,
         qid,

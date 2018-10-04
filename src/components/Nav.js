@@ -13,11 +13,12 @@ class Nav extends Component {
     render() {
 
         const { users, authedUser } = this.props;
-        let userName = '';
-
+        let userName, userAvatar = '';
 
         if (authedUser) {
             userName = users[authedUser].name;
+            userAvatar = users[authedUser].avatarURL;
+
         }
 
         return (
@@ -44,6 +45,9 @@ class Nav extends Component {
 
                         {this.props.authedUser && (
                             <ul>
+                                <li className="nav-avatar">
+                                    <img src={userAvatar} alt={userName}/>
+                                </li>
                                 <li>
                                     {userName}
                                 </li>
