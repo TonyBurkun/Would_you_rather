@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { saveQuestion } from '../actions/questions'
+import { saveUserQuestion } from '../actions/users'
 import { _saveQuestion } from '../utils/_DATA'
 import {showLoading, hideLoading} from "react-redux-loading";
 import { withRouter } from 'react-router-dom'
@@ -48,6 +49,7 @@ class NewQuestion extends Component {
             _saveQuestion(question)
                 .then(question =>  {
                     this.props.dispatch(saveQuestion(question));
+                    this.props.dispatch(saveUserQuestion(question));
                     this.setState(() => ({
                         optionOne: '',
                         optionTwo: ''
@@ -55,6 +57,8 @@ class NewQuestion extends Component {
                     this.props.dispatch(hideLoading());
                     this.props.history.push(`/`);
                 });
+        } else {
+            alert('You should fill option one and option two for the question');
         }
     };
 

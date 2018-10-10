@@ -17,11 +17,12 @@ const PrivateRoute = ({component: Component, isLoggedIn, ...rest}) => (
 
     <Route
         {...rest}
+        prevPath={'lol'}
 
         render={(props) => (
             isLoggedIn === true
                 ? <Component {...props} />
-                : <Redirect to={{pathname: '/login'}}/>
+                : <Redirect to={{pathname: '/login', state: {prevPath: window.location.pathname}}}/>
         )}/>
 
 
@@ -39,6 +40,8 @@ class App extends Component {
 
     render() {
 
+        let path = window.location.pathname;
+
         return (
             <Router>
                 <Fragment>
@@ -51,7 +54,7 @@ class App extends Component {
                             <PrivateRoute path="/leaderboard" component={LeaderList} isLoggedIn={this.props.authedUser}/>
                             <PrivateRoute path="/questions/:id" component={QuestionPage} isLoggedIn={this.props.authedUser}/>
                             <Route path="/login" component={Login}/>
-                            <Route path="*" component={NoMatch}/>
+                            <Route path="*" component={NoMatch} isLoggedIn={this.props.authedUser}/>
                         </Switch>
                     </div>
                 </Fragment>

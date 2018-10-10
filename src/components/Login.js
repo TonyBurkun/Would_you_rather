@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import { Redirect, withRouter } from 'react-router-dom'
 import User from '../components/User'
 import { setAuthedUser } from '../actions/authedUser'
 
@@ -30,9 +30,14 @@ class Login extends Component {
 
     render () {
 
+
         let { usersId, authedUser } = this.props;
 
+        console.log(this);
         if (authedUser) {
+            if(this.props.location.state){
+                return <Redirect to={this.props.location.state.prevPath} />
+            }
             return <Redirect to='/' />
         }
 
@@ -71,4 +76,4 @@ function mapStateToProps ({users, authedUser}) {
     }
 }
 
-export default connect(mapStateToProps)(Login)
+export default withRouter(connect(mapStateToProps)(Login))

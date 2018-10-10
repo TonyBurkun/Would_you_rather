@@ -1,18 +1,17 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 
-class User extends Component {
 
-    render () {
+function User(props){
+    const { user } = props;
+    const {id} = props;
 
-        const { user } = this.props;
-        const {id} = this.props;
-
-        return (
-            <option id={id}>{user.name}</option>
-        )
-    }
+    return (
+        <option id={id}>{user.name}</option>
+    )
 }
+
+
 
 function mapStateToProps({users}, {id}) {
     return {
