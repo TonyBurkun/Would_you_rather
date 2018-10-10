@@ -33,7 +33,6 @@ class Login extends Component {
 
         let { usersId, authedUser } = this.props;
 
-        console.log(this);
         if (authedUser) {
             if(this.props.location.state){
                 return <Redirect to={this.props.location.state.prevPath} />
