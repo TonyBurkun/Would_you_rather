@@ -54,7 +54,7 @@ class App extends Component {
                             <PrivateRoute path="/leaderboard" component={LeaderList} isLoggedIn={this.props.authedUser}/>
                             <PrivateRoute path="/questions/:id" component={QuestionPage} isLoggedIn={this.props.authedUser}/>
                             <Route path="/login" component={Login}/>
-                            <Route path="*" component={NoMatch} isLoggedIn={this.props.authedUser}/>
+                            <PrivateRoute path="*" component={NoMatch} isLoggedIn={this.props.authedUser}/>
                         </Switch>
                     </div>
                 </Fragment>
