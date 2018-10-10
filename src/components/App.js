@@ -40,7 +40,6 @@ class App extends Component {
 
     render() {
 
-        let path = window.location.pathname;
 
         return (
             <Router>
