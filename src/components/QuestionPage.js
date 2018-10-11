@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {_saveQuestionAnswer} from '../utils/_DATA'
 import { saveQuestionAnswer } from '../actions/questions'
 import { saveUserAnswer } from '../actions/users'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Redirect } from 'react-router-dom'
 import QuestionResult from './QuestionResult'
 import {showLoading, hideLoading} from "react-redux-loading";
 
@@ -67,9 +67,17 @@ class QuestionPage extends Component {
     render() {
 
         const {question, users} = this.props;
+
+        if (Boolean(!question)) {
+            return <Redirect to="/404"/>
+        }
+
         const questionUser = users[question.author],
               userName = questionUser.name,
               userImg = questionUser.avatarURL;
+
+
+
 
         return (
 
